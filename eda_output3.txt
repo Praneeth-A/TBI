@@ -1,0 +1,98 @@
+=== DATE RANGES (USING IST TIMESTAMP) ===
+Trader Data Range: 2023-05-01 to 2025-05-01 
+Sentiment Data Range: 2018-02-01 to 2025-05-02 
+
+Overlap Period: 2023-05-01 to 2025-05-01 
+Overlap Days: 732 
+
+=== MERGE RESULTS ===
+Total Trades: 211224 
+Trades with Sentiment Match: 211218 
+Trades without Sentiment: 6 
+Match Rate: 100 %
+
+=== TRADING ACTIVITY SUMMARY ===
+Total Unique Trading Days: 480 
+Avg Trades per Day: 440.05 
+Median Trades per Day: 67.5 
+
+=== FIRST 15 TRADING DAYS ===
+# A tibble: 15 × 6
+   date       num_trades unique_accounts unique_coins total_volume_usd
+   <date>          <int>           <int>        <int>            <dbl>
+ 1 2023-05-01          3               1            1             477 
+ 2 2023-12-05          9               1            2           50006.
+ 3 2023-12-14         11               1            4          113203.
+ 4 2023-12-15          2               1            1           10610.
+ 5 2023-12-16          3               1            1           15349.
+ 6 2023-12-17         14               1            3          116278.
+ 7 2023-12-18          2               1            1           31164.
+ 8 2023-12-19         15               1            2           91602.
+ 9 2023-12-20         18               1            2          141637.
+10 2023-12-21         49               1            1          125234.
+11 2023-12-22         10               1            2           88874.
+12 2023-12-23         13               1            2           78438.
+13 2023-12-24         39               1            4          402955.
+14 2023-12-25          3               1            1           59949.
+15 2023-12-27         28               1            2          171411.
+# ℹ 1 more variable: avg_trade_size <dbl>
+
+=== LAST 15 TRADING DAYS ===
+# A tibble: 15 × 6
+   date       num_trades unique_accounts unique_coins total_volume_usd
+   <date>          <int>           <int>        <int>            <dbl>
+ 1 2025-04-17       1031              12           14         2604552.
+ 2 2025-04-18       1894              12           21        24610650.
+ 3 2025-04-19       2786              15           13        32706463.
+ 4 2025-04-20       1982              12           31        12126094.
+ 5 2025-04-21       1718              14           35        42104055.
+ 6 2025-04-22       2998              15           27        33753625.
+ 7 2025-04-23       6159              19           44        30682444.
+ 8 2025-04-24       2232              15           32        35088919.
+ 9 2025-04-25       1653              16           35        27749456.
+10 2025-04-26       1131              12           27        11948128.
+11 2025-04-27        337               9           16          487538.
+12 2025-04-28       1379               8           14        26124921.
+13 2025-04-29       2243               7           17        34089512.
+14 2025-04-30       1113               8           15        12693879.
+15 2025-05-01       1230              11           11        10720241.
+# ℹ 1 more variable: avg_trade_size <dbl>
+
+=== SENTIMENT DISTRIBUTION IN TRADES ===
+# A tibble: 5 × 5
+  classification num_trades total_volume avg_trade_size pct_trades
+  <chr>               <int>        <dbl>          <dbl>      <dbl>
+1 Fear                61837   483324790.          7816.       29.3
+2 Greed               50303   288582495.          5737.       23.8
+3 Extreme Greed       39992   124465165.          3112.       18.9
+4 Neutral             37686   180242063.          4783.       17.8
+5 Extreme Fear        21400   114484261.          5350.       10.1
+
+=== PNL STATS BY SENTIMENT ===
+# A tibble: 5 × 9
+  classification num_trades trades_with_pnl avg_pnl median_pnl total_pnl
+  <chr>               <int>           <int>   <dbl>      <dbl>     <dbl>
+1 Extreme Greed       39992           20853    67.9          0  2715171.
+2 Fear                61837           29808    54.3          0  3357155.
+3 Greed               50303           25176    42.7          0  2150129.
+4 Extreme Fear        21400           10406    34.5          0   739110.
+5 Neutral             37686           18159    34.3          0  1292921.
+# ℹ 3 more variables: max_profit <dbl>, max_loss <dbl>, num_accounts <int>
+
+=== TRADING DIRECTION BY SENTIMENT ===
+# A tibble: 5 × 13
+  classification   Buy `Close Long` `Close Short` `Long > Short` `Open Long`
+  <chr>          <int>        <int>         <int>          <int>       <int>
+1 Extreme Fear     807         6241          3117              5        7005
+2 Extreme Greed   5132         7186          6497              7        6300
+3 Fear            3207        17260          9221             14       17824
+4 Greed           4685         7998         11322             16        8544
+5 Neutral         2885         9993          5850             15       10222
+# ℹ 7 more variables: `Open Short` <int>, Sell <int>, `Short > Long` <int>,
+#   `Spot Dust Conversion` <int>, `Auto-Deleveraging` <int>,
+#   `Liquidated Isolated Short` <int>, Settlement <int>
+
+✓ Merged data saved as 'merged_trader_sentiment.csv'
+
+=== NEXT STEPS ===
+We now have clean merged data. Ready for deeper analysis!

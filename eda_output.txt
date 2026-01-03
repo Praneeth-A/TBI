@@ -1,0 +1,148 @@
+=== TRADER DATA STRUCTURE ===
+'data.frame':	211224 obs. of  16 variables:
+ $ Account         : num  9.95e+47 9.95e+47 9.95e+47 9.95e+47 9.95e+47 ...
+ $ Coin            : chr  "@107" "@107" "@107" "@107" ...
+ $ Execution.Price : num  7.98 7.98 7.99 7.99 7.99 ...
+ $ Size.Tokens     : num  986.87 16 144.09 142.98 8.73 ...
+ $ Size.USD        : num  7872.2 127.7 1150.6 1142 69.8 ...
+ $ Side            : chr  "BUY" "BUY" "BUY" "BUY" ...
+ $ Timestamp.IST   : chr  "02-12-2024 22:50" "02-12-2024 22:50" "02-12-2024 22:50" "02-12-2024 22:50" ...
+ $ Start.Position  : num  0 987 1003 1147 1289 ...
+ $ Direction       : chr  "Buy" "Buy" "Buy" "Buy" ...
+ $ Closed.PnL      : num  0 0 0 0 0 0 0 0 0 0 ...
+ $ Transaction.Hash: num  1.07e+77 1.07e+77 1.07e+77 1.07e+77 1.07e+77 ...
+ $ Order.ID        : num  5.2e+10 5.2e+10 5.2e+10 5.2e+10 5.2e+10 ...
+ $ Crossed         : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+ $ Fee             : num  0.3454 0.0056 0.05043 0.05004 0.00306 ...
+ $ Trade.ID        : num  8.95e+14 4.43e+14 6.60e+14 1.08e+15 1.05e+15 ...
+ $ Timestamp       : num  1.73e+12 1.73e+12 1.73e+12 1.73e+12 1.73e+12 ...
+
+=== TRADER DATA SUMMARY ===
+    Account              Coin           Execution.Price      Size.Tokens       
+ Min.   :4.682e+46   Length:211224      Min.   :0.000e+00   Min.   :0.000e+00  
+ 1st Qu.:4.543e+47   Class :character   1st Qu.:4.855e+00   1st Qu.:2.900e+00  
+ Median :7.563e+47   Mode  :character   Median :1.828e+01   Median :3.200e+01  
+ Mean   :7.444e+47                      Mean   :1.141e+04   Mean   :4.623e+03  
+ 3rd Qu.:1.066e+48                      3rd Qu.:1.016e+02   3rd Qu.:1.879e+02  
+ Max.   :1.090e+48                      Max.   :1.090e+05   Max.   :1.582e+07  
+    Size.USD             Side           Timestamp.IST      Start.Position      
+ Min.   :      0.0   Length:211224      Length:211224      Min.   :-1.433e+07  
+ 1st Qu.:    193.8   Class :character   Class :character   1st Qu.:-3.762e+02  
+ Median :    597.0   Mode  :character   Mode  :character   Median : 8.470e+01  
+ Mean   :   5639.5                                         Mean   :-2.995e+04  
+ 3rd Qu.:   2059.0                                         3rd Qu.: 9.337e+03  
+ Max.   :3921430.7                                         Max.   : 3.051e+07  
+  Direction           Closed.PnL         Transaction.Hash   
+ Length:211224      Min.   :-1.180e+05   Min.   :0.000e+00  
+ Class :character   1st Qu.: 0.000e+00   1st Qu.:2.493e+76  
+ Mode  :character   Median : 0.000e+00   Median :5.582e+76  
+                    Mean   : 4.875e+01   Mean   :5.551e+76  
+                    3rd Qu.: 5.793e+00   3rd Qu.:8.544e+76  
+                    Max.   : 1.353e+05   Max.   :1.158e+77  
+    Order.ID          Crossed             Fee               Trade.ID        
+ Min.   :1.733e+08   Mode :logical   Min.   : -1.17571   Min.   :0.000e+00  
+ 1st Qu.:5.984e+10   FALSE:82821     1st Qu.:  0.01612   1st Qu.:2.810e+14  
+ Median :7.443e+10   TRUE :128403    Median :  0.08958   Median :5.620e+14  
+ Mean   :6.965e+10                   Mean   :  1.16397   Mean   :5.629e+14  
+ 3rd Qu.:8.336e+10                   3rd Qu.:  0.39381   3rd Qu.:8.460e+14  
+ Max.   :9.015e+10                   Max.   :837.47159   Max.   :1.130e+15  
+   Timestamp        
+ Min.   :1.680e+12  
+ 1st Qu.:1.740e+12  
+ Median :1.740e+12  
+ Mean   :1.738e+12  
+ 3rd Qu.:1.740e+12  
+ Max.   :1.750e+12  
+
+=== TRADER DATA HEAD ===
+        Account Coin Execution.Price Size.Tokens Size.USD Side    Timestamp.IST
+1  9.954757e+47 @107          7.9769      986.87  7872.16  BUY 02-12-2024 22:50
+2  9.954757e+47 @107          7.9800       16.00   127.68  BUY 02-12-2024 22:50
+3  9.954757e+47 @107          7.9855      144.09  1150.63  BUY 02-12-2024 22:50
+4  9.954757e+47 @107          7.9874      142.98  1142.04  BUY 02-12-2024 22:50
+5  9.954757e+47 @107          7.9894        8.73    69.75  BUY 02-12-2024 22:50
+6  9.954757e+47 @107          7.9900        1.41    11.27  BUY 02-12-2024 22:50
+7  9.954757e+47 @107          7.9934      144.09  1151.77  BUY 02-12-2024 22:50
+8  9.954757e+47 @107          8.0000       34.00   272.00  BUY 02-12-2024 22:50
+9  9.954757e+47 @107          8.0000       46.00   368.00  BUY 02-12-2024 22:50
+10 9.954757e+47 @107          8.0000       12.50   100.00  BUY 02-12-2024 22:50
+   Start.Position Direction Closed.PnL Transaction.Hash    Order.ID Crossed
+1          0.0000       Buy          0     1.067622e+77 52017706630    TRUE
+2        986.5246       Buy          0     1.067622e+77 52017706630    TRUE
+3       1002.5190       Buy          0     1.067622e+77 52017706630    TRUE
+4       1146.5586       Buy          0     1.067622e+77 52017706630    TRUE
+5       1289.4885       Buy          0     1.067622e+77 52017706630    TRUE
+6       1298.2155       Buy          0     1.067622e+77 52017706630    TRUE
+7       1299.6250       Buy          0     1.067622e+77 52017706630    TRUE
+8       1443.6645       Buy          0     1.067622e+77 52017706630    TRUE
+9       1477.6526       Buy          0     1.067622e+77 52017706630    TRUE
+10      1523.6365       Buy          0     1.067622e+77 52017706630    TRUE
+          Fee Trade.ID Timestamp
+1  0.34540448 8.95e+14  1.73e+12
+2  0.00560000 4.43e+14  1.73e+12
+3  0.05043140 6.60e+14  1.73e+12
+4  0.05004294 1.08e+15  1.73e+12
+5  0.00305542 1.05e+15  1.73e+12
+6  0.00049349 7.33e+14  1.73e+12
+7  0.05043148 9.06e+14  1.73e+12
+8  0.01190000 3.96e+14  1.73e+12
+9  0.01610000 9.46e+14  1.73e+12
+10 0.00437500 3.47e+13  1.73e+12
+
+=== TRADER DATA: Missing Values ===
+         Account             Coin  Execution.Price      Size.Tokens 
+               0                0                0                0 
+        Size.USD             Side    Timestamp.IST   Start.Position 
+               0                0                0                0 
+       Direction       Closed.PnL Transaction.Hash         Order.ID 
+               0                0                0                0 
+         Crossed              Fee         Trade.ID        Timestamp 
+               0                0                0                0 
+
+
+=== SENTIMENT DATA STRUCTURE ===
+'data.frame':	2644 obs. of  4 variables:
+ $ timestamp     : int  1517463000 1517549400 1517635800 1517722200 1517808600 1517895000 1517981400 1518067800 1518154200 1518240600 ...
+ $ value         : int  30 15 40 24 11 8 36 30 44 54 ...
+ $ classification: chr  "Fear" "Extreme Fear" "Fear" "Extreme Fear" ...
+ $ date          : chr  "2018-02-01" "2018-02-02" "2018-02-03" "2018-02-04" ...
+
+=== SENTIMENT DATA SUMMARY ===
+   timestamp             value       classification         date          
+ Min.   :1.517e+09   Min.   : 5.00   Length:2644        Length:2644       
+ 1st Qu.:1.575e+09   1st Qu.:28.00   Class :character   Class :character  
+ Median :1.632e+09   Median :46.00   Mode  :character   Mode  :character  
+ Mean   :1.632e+09   Mean   :46.98                                        
+ 3rd Qu.:1.689e+09   3rd Qu.:66.00                                        
+ Max.   :1.746e+09   Max.   :95.00                                        
+
+=== SENTIMENT DATA HEAD ===
+    timestamp value classification       date
+1  1517463000    30           Fear 2018-02-01
+2  1517549400    15   Extreme Fear 2018-02-02
+3  1517635800    40           Fear 2018-02-03
+4  1517722200    24   Extreme Fear 2018-02-04
+5  1517808600    11   Extreme Fear 2018-02-05
+6  1517895000     8   Extreme Fear 2018-02-06
+7  1517981400    36           Fear 2018-02-07
+8  1518067800    30           Fear 2018-02-08
+9  1518154200    44           Fear 2018-02-09
+10 1518240600    54        Neutral 2018-02-10
+
+=== SENTIMENT DATA: Missing Values ===
+     timestamp          value classification           date 
+             0              0              0              0 
+
+=== UNIQUE VALUES ===
+Unique Coins: 246 
+Unique Accounts: 32 
+Unique Sides: BUY, SELL 
+Unique Directions: Buy, Sell, Open Long, Close Long, Spot Dust Conversion, Open Short, Close Short, Long > Short, Short > Long, Auto-Deleveraging, Liquidated Isolated Short, Settlement 
+Unique Sentiments: Fear, Extreme Fear, Neutral, Greed, Extreme Greed 
+
+=== DATE RANGES ===
+Trader Data Date Range: Check timestamp format
+Sentiment Data Date Range: 2018-02-01 to 2025-05-02 
+
+=== DATA DIMENSIONS ===
+Trader Data Rows: 211224 | Columns: 16 

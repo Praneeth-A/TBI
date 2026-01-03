@@ -1,0 +1,142 @@
+=== COLUMN NAMES CHECK ===
+ [1] "Account"          "Coin"             "Execution.Price"  "Size.Tokens"     
+ [5] "Size.USD"         "Side"             "Timestamp.IST"    "Start.Position"  
+ [9] "Direction"        "Closed.PnL"       "Transaction.Hash" "Order.ID"        
+[13] "Crossed"          "Fee"              "Trade.ID"         "Timestamp"       
+[17] "datetime_ist"     "date"             "value"            "classification"  
+
+=== ACCOUNT-LEVEL ANALYSIS ===
+
+Top 10 Accounts by Total PnL:
+# A tibble: 10 × 9
+   Account total_trades total_pnl avg_pnl median_pnl win_rate total_volume
+     <dbl>        <int>     <dbl>   <dbl>      <dbl>    <dbl>        <dbl>
+ 1 1.01e48        14733  2143383.   145.        0        79.1    56543565.
+ 2 4.68e46         3818  1600230.   419.        0        79.3    61697264.
+ 3 1.07e48        21192   940164.    44.4       0        99.1    68036340.
+ 4 4.64e47        12236   840423.    68.7       0        89.5   420876556.
+ 5 1.09e48        40184   836081.    20.8       0        76.3    74107810.
+ 6 4.27e47         4356   677747.   156.        0        94.8    39572949.
+ 7 6.53e47         1590   429356.   270.        0        74.6    11474501.
+ 8 3.83e47         1237   416542.   337.        0       100       2966109.
+ 9 6.73e47         9893   379095.    38.3       7.72     92.6    25729497.
+10 6.55e47         1424   360540.   253.        0        77.4     2962475.
+# ℹ 2 more variables: num_coins <int>, active_days <int>
+
+
+=== ACCOUNT PERFORMANCE BY SENTIMENT ===
+How do top accounts perform in different market conditions?
+
+# A tibble: 24 × 6
+   Account classification num_trades total_pnl avg_pnl win_rate
+     <dbl> <chr>               <int>     <dbl>   <dbl>    <dbl>
+ 1 4.68e46 Fear                 1778  1113374.   626.      89.1
+ 2 4.68e46 Greed                 574   276719.   482.      60.1
+ 3 4.68e46 Neutral               421   125650.   298.     100  
+ 4 4.68e46 Extreme Fear          100   124769.  1248.     100  
+ 5 4.68e46 Extreme Greed         945   -40282.   -42.6     25.6
+ 6 4.64e47 Neutral              2517   381330.   152.      96.7
+ 7 4.64e47 Fear                 5981   367166.    61.4     86.0
+ 8 4.64e47 Greed                3169   163048.    51.5     91.3
+ 9 4.64e47 Extreme Greed         223        0      0      NaN  
+10 4.64e47 Extreme Fear          346   -71122.  -206.      66.9
+# ℹ 14 more rows
+
+
+=== POSITION SIZE ANALYSIS BY SENTIMENT ===
+# A tibble: 5 × 6
+  classification avg_size_usd median_size_usd max_size_usd min_size_usd
+  <chr>                 <dbl>           <dbl>        <dbl>        <dbl>
+1 Fear                  7816.            736.     3921431.         0   
+2 Greed                 5737.            555      2227115.         0   
+3 Extreme Fear          5350.            766.     1120972.         0.01
+4 Neutral               4783.            548.     3641181.         0.01
+5 Extreme Greed         3112.            500.      665772.         0   
+# ℹ 1 more variable: total_volume <dbl>
+
+
+=== TRADE SIZE VS PNL ANALYSIS ===
+# A tibble: 20 × 6
+   classification size_category      num_trades  avg_pnl total_pnl win_rate
+   <chr>          <chr>                   <int>    <dbl>     <dbl>    <dbl>
+ 1 Extreme Fear   Large ($2k-$10k)         2346   53.6     125724.     77.9
+ 2 Extreme Fear   Medium ($500-$2k)        3874    9.36     36270.     77.9
+ 3 Extreme Fear   Small (<$500)            3331    0.230      767.     71.5
+ 4 Extreme Fear   Very Large (>$10k)        855  674.      576350.     82.3
+ 5 Extreme Greed  Large ($2k-$10k)         3237  279.      901583.     87.6
+ 6 Extreme Greed  Medium ($500-$2k)        5368   72.4     388866.     88.5
+ 7 Extreme Greed  Small (<$500)           11131   15.3     169905.     90.5
+ 8 Extreme Greed  Very Large (>$10k)       1117 1123.     1254818.     83.4
+ 9 Fear           Large ($2k-$10k)         5603  141.      790247.     87.6
+10 Fear           Medium ($500-$2k)        9741   31.0     301811.     87.4
+11 Fear           Small (<$500)           11419    6.11     69765.     87.1
+12 Fear           Very Large (>$10k)       3045  721.     2195333.     87.1
+13 Greed          Large ($2k-$10k)         4314  130.      558793.     80.8
+14 Greed          Medium ($500-$2k)        7684   32.2     247054.     73.3
+15 Greed          Small (<$500)           11085    8.66     95961.     77.2
+16 Greed          Very Large (>$10k)       2093  596.     1248321.     80.0
+17 Neutral        Large ($2k-$10k)         3274  129.      421125.     82.7
+18 Neutral        Medium ($500-$2k)        5288   25.7     135819.     81.9
+19 Neutral        Small (<$500)            8178    3.15     25723.     82.0
+20 Neutral        Very Large (>$10k)       1419  501.      710254.     86.0
+
+
+=== TOP COINS: PERFORMANCE CONSISTENCY ACROSS SENTIMENTS ===
+# A tibble: 50 × 6
+   Coin  classification num_trades total_pnl avg_pnl win_rate
+   <chr> <chr>               <int>     <dbl>   <dbl>    <dbl>
+ 1 @107  Extreme Greed        6341  1988619.  314.       92.1
+ 2 @107  Greed                5038   724342.  144.       76.5
+ 3 @107  Neutral              1932   219552.  114.       87.4
+ 4 @107  Fear                 2969   -12515.   -4.22     76.2
+ 5 @107  Extreme Fear          886  -136085. -154.       42.4
+ 6 BTC   Fear                 4342   482650.  111.       87.6
+ 7 BTC   Neutral              1812   165980.   91.6      86.3
+ 8 BTC   Greed                3209   115475.   36.0      74.9
+ 9 BTC   Extreme Greed         979   100883.  103.       84.6
+10 BTC   Extreme Fear          667     3057.    4.58     81.4
+# ℹ 40 more rows
+
+
+=== WHICH TRADING DIRECTIONS ARE MOST EFFECTIVE? ===
+# A tibble: 15 × 6
+   classification Direction   num_trades total_pnl avg_pnl win_rate
+   <chr>          <chr>            <int>     <dbl>   <dbl>    <dbl>
+ 1 Extreme Fear   Close Short       3117   384639.  123.       70.6
+ 2 Extreme Fear   Close Long        6241   506753.   81.2      84.6
+ 3 Extreme Fear   Sell              1037  -140693. -136.       42.2
+ 4 Extreme Greed  Sell              7161  2081660.  291.       92.5
+ 5 Extreme Greed  Close Long        7185   444316.   61.8      88.8
+ 6 Extreme Greed  Close Short       6489   188221.   29.0      86.0
+ 7 Fear           Close Short       9212  1914986.  208.       86.2
+ 8 Fear           Close Long       17260  1432582.   83.0      89.9
+ 9 Fear           Sell              3304   -10567.   -3.20     76.7
+10 Greed          Sell              5846   766340.  131.       79.0
+11 Greed          Close Long        7963   711491.   89.3      86.7
+12 Greed          Close Short      11319   624923.   55.2      68.9
+13 Neutral        Close Short       5849   554558.   94.8      77.7
+14 Neutral        Sell              2298   210007.   91.4      77.9
+15 Neutral        Close Long        9985   527788.   52.9      86.2
+
+
+=== SENTIMENT TRANSITIONS ===
+How does sentiment change day-to-day?
+
+Sentiment Transition Matrix (rows = previous, columns = current):
+# A tibble: 5 × 7
+  prev_sentiment `Extreme Fear`  Fear Neutral `Extreme Greed` Greed  `NA`
+  <chr>                   <int> <int>   <int>           <int> <int> <int>
+1 Extreme Fear                7     6       1               0     0     0
+2 Extreme Greed               0     0       0              90    24     0
+3 Fear                        7    67      15               0     2     0
+4 Greed                       0     2      17              24   149     1
+5 Neutral                     0    16      34               0    16     0
+
+=== DATA INSIGHTS SUMMARY ===
+1. Extreme Greed has highest win rate (89.2%) but Extreme Fear has higher avg win amount
+2. Short positions in Extreme Greed are extremely profitable (avg $166 PnL)
+3. Top accounts show consistency - high win rates across sentiments
+4. @107 coin dominates Extreme Greed period with $1.99M PnL
+5. December 2024 was the most profitable month ($3M total PnL)
+
+=== READY FOR STATISTICAL TESTING & VISUALIZATION ===
