@@ -1,8 +1,5 @@
 # Bitcoin Market Sentiment & Trader Performance Analysis
 
-## Author: [Your Name]
-## Date: January 2025
-
 ## Project Overview
 Analysis of 211K+ trades to uncover relationships between market sentiment 
 and trader performance, with actionable trading strategies.
