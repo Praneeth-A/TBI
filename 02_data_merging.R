@@ -1,7 +1,7 @@
 library(tidyverse)
 library(lubridate)
 
-sink("eda_output3.txt")
+sink("Output2.txt")
 
 # Load data
 trader_data <- read.csv("historical_data.csv", stringsAsFactors = FALSE)

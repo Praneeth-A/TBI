@@ -2,11 +2,8 @@
 library(tidyverse)
 library(lubridate)
 
-# Check working directory
-print(getwd())
-
 # Redirect output to a text file
-sink("C:/Users/prane/Desktop/Internshhips/PrimeTrade/eda_output.txt")
+sink("Output1.txt")
 
 # Load datasets
 trader_data <- read.csv("historical_data.csv", stringsAsFactors = FALSE)

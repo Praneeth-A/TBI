@@ -1,7 +1,7 @@
 library(tidyverse)
 library(lubridate)
 
-sink("eda_output5.txt")
+sink("Output4.txt")
 
 # Load data
 merged_data <- read.csv("merged_trader_sentiment.csv", stringsAsFactors = FALSE)
